@@ -1,0 +1,31 @@
+Feature: 
+
+As a new customer, I would like to create my Farmdrop account utilizing existing log in credentials sourced from Facebook.
+
+Background:
+
+Given I navigate to the homepage
+
+When I click the Sign Up icon
+
+Then I am redirected to the /signup page
+
+Scenario: Successful account creation utilizing Facebook credentials
+
+When I click the Sign up with Facebook button
+
+And the Facebook modal is displayed
+
+And I enter the associated email address
+
+And I enter the associated password
+
+And I click the log in button
+
+Then the Facebook permissions modal is displayed
+
+And I click Allow
+
+Then I am redirected to the Farmdrop landing page
+
+And my account has been created.
