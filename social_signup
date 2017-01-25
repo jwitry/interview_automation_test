@@ -1,6 +1,9 @@
+@happy_facebook_path
+
 Feature: 
 
 As a new customer, I would like to create my Farmdrop account utilizing existing log in credentials sourced from Facebook.
+
 
 Background:
 
@@ -9,6 +12,8 @@ Given I navigate to the homepage
 When I click the Sign Up icon
 
 Then I am redirected to the /signup page
+
+
 
 Scenario: Successful account creation utilizing Facebook credentials
 
@@ -29,3 +34,22 @@ And I click Allow
 Then I am redirected to the Farmdrop landing page
 
 And my account has been created.
+
+
+@sad_facebook_path
+
+Scenario: Unsuccessful account creation using social sign up
+
+When I click the Sign up with Facebook button
+
+And the Facebook modal is displayed
+
+And I enter an invalid email address into email
+
+And I enter an invalid password into password
+
+And I click Log In
+
+Then an error message is displayed
+
+And my account is not created. 
