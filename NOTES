@@ -1,0 +1,4 @@
++  #additional scenarios to account for: 
+test all basic validation on required fields (max characters, characters accepted, out of area post codes)
+Forgot password flows
+Verify how account information is generated when using Facebook sign up versus traditional sign up?
